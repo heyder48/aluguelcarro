@@ -1,7 +1,7 @@
 package com.letscode.heyder.modelos.cliente;
 
 import java.time.LocalDate;
-import java.util.List;
+
 
 import com.letscode.heyder.exceptions.CNHInvalidaException;
 
@@ -22,6 +22,20 @@ public class CNH {
         this.numero = numero;
         this.dataVencimento = dataVencimento;
     }
+
+    public String getNumero() {
+        return numero;
+    }
+
+
+
+
+    public LocalDate getDataVencimento() {
+        return dataVencimento;
+    }
+
+    
+    
 
     
 
