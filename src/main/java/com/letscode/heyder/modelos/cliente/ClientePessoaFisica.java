@@ -1,6 +1,7 @@
 package com.letscode.heyder.modelos.cliente;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
 import com.letscode.heyder.exceptions.CNHInvalidaException;
@@ -15,8 +16,6 @@ public class ClientePessoaFisica extends Cliente{
     private final String nome;
     private final CPF cpf;
     private final CNH cnh;
-    
-
     private final LocalDate dataNascimento;
 
     
@@ -29,13 +28,13 @@ public class ClientePessoaFisica extends Cliente{
             throw new NomeInvalidoException("Nome não pode ser vazio");
         }
 
-        if(LocalDate.parse(dataNascimento).isAfter(LocalDate.now())){
+        if(LocalDate.parse(dataNascimento,DateTimeFormatter.ofPattern("dd/MM/aaaa")).isAfter(LocalDate.now())){
             throw new DataInvalidaException("Data de nascimento não pode ser maior que a data atual");
         }
         
         this.nome = nome;
         this.cpf = new CPF(numeroCPF);
-        this.dataNascimento = LocalDate.parse(dataNascimento);
+        this.dataNascimento = LocalDate.parse(dataNascimento,DateTimeFormatter.ofPattern("dd/MM/aaaa"));
         this.cnh = new CNH(numeroCnh, LocalDate.parse(dataVencimentoCnh));
         
     }
