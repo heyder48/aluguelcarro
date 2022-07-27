@@ -9,7 +9,7 @@ import com.letscode.heyder.modelos.cliente.Cliente;
 public class Aluguel {
 
     private Veiculos veiculo;
-    private Cliente cliente;
+    private Cliente  cliente;
     private LocalDate dataInicio;
     private LocalDate dataFim;
 
