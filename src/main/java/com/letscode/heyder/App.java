@@ -16,11 +16,11 @@ public class App
         
     }
 
-    public Cliente cadastrarClientePessoaFisica(){
+    /* public Cliente cadastrarClientePessoaFisica(){
         System.out.println("Digite o nome do cliente:");
         String nome = scanner.nextLine();
         System.out.println("Digite o email do cliente:");
         String email = scanner.nextLine();
         
-    }
+    } */
 }
