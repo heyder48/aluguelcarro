@@ -28,15 +28,24 @@ public class ClientePessoaFisica extends Cliente{
             throw new NomeInvalidoException("Nome não pode ser vazio");
         }
 
-        if(LocalDate.parse(dataNascimento,DateTimeFormatter.ofPattern("dd/MM/aaaa")).isAfter(LocalDate.now())){
+        if(LocalDate.parse(dataNascimento, DateTimeFormatter.ofPattern("dd/MM/yyyy")).isAfter(LocalDate.now())){
             throw new DataInvalidaException("Data de nascimento não pode ser maior que a data atual");
         }
         
         this.nome = nome;
         this.cpf = new CPF(numeroCPF);
-        this.dataNascimento = LocalDate.parse(dataNascimento,DateTimeFormatter.ofPattern("dd/MM/aaaa"));
+        this.dataNascimento = LocalDate.parse(dataNascimento,DateTimeFormatter.ofPattern("dd/MM/yyyy"));
         this.cnh = new CNH(numeroCnh, LocalDate.parse(dataVencimentoCnh));
         
+    }
+
+    @Override
+    public Boolean isDiscountApplicable(Integer dias) {
+        if(dias >= 5) {
+            System.out.println("Desconto para pessoa física aplicado");
+            return true;
+        }
+        return false;
     }
 
     public CPF getCpf() {
@@ -59,6 +68,8 @@ public class ClientePessoaFisica extends Cliente{
     public CNH getCnh() {
         return cnh;
     }
+
+
 
 
 

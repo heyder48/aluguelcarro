@@ -2,7 +2,7 @@ package com.letscode.heyder.modelos.veiculos;
 
 import java.math.BigDecimal;
 
-public class CarroMedio extends Veiculos {
+public class CarroMedio extends Veiculo {
 
     public CarroMedio(final Marca marca, final String modelo, final String ano, final Cor cor, final String placa) {
         super(marca, modelo, ano, cor, placa);
@@ -10,7 +10,7 @@ public class CarroMedio extends Veiculos {
 
     @Override
     public BigDecimal precoBase() {
-        return new BigDecimal("150d");
+        return new BigDecimal("150");
     }
 
 

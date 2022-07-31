@@ -1,6 +1,6 @@
 package com.letscode.heyder.servicos;
 
-public class ALuguelServiceSUV extends AluguelService {
+public class AluguelServiceSUV extends AluguelService {
 
 
     

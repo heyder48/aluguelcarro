@@ -29,5 +29,5 @@ public abstract class Cliente {
         this.telefones.remove(telefone);
     }
 
-
+    public abstract Boolean isDiscountApplicable(Integer dias);
 }

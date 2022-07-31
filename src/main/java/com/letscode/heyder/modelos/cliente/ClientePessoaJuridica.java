@@ -20,6 +20,14 @@ public class ClientePessoaJuridica extends Cliente {
         this.responsavel = responsavel;
         
     }
+    @Override
+    public Boolean isDiscountApplicable(Integer dias) {
+        if (dias >= 3) {
+            System.out.println("Desconto para pessoa jurídica aplicado");
+            return true;
+        }
+        return false;
+    }
 
     public CNPJ getCnpj() {
         return cnpj;
@@ -44,7 +52,5 @@ public class ClientePessoaJuridica extends Cliente {
     public void setResponsavel(ClientePessoaFisica responsavel) {
         this.responsavel = responsavel;
     }
-
-
     
 }
